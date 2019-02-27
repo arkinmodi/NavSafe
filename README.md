@@ -17,8 +17,11 @@ The final project for SFWRENG 2XB3.
     - Factor out of the traveler’s control
     - Mistakes by pedestrian or driver has a higher chance of being fatal in these intersections
 
-Areas where flawed design could occur:
-Road width, speed limit, markings and signs, and intersection infrastructure such as dividers and shoulders
+- Areas where flawed design could occur:
+  - Road width
+  - Speed limit
+  - Markings and signs
+  - Intersection infrastructure such as dividers and shoulders
 
 ## The Solution
 - Navigation system which focuses on safety
