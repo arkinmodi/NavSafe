@@ -11,12 +11,10 @@ The final project for SFWRENG 2XB3.
 
 ## The Problem
 - Vehicle collisions
-  - Potential result of **injury or death**
-  
-  - Many high-risk intersections with flawed designs
+  - Potential result of **injury or death**  
+- Many high-risk intersections with flawed designs
     - Factor out of the traveler’s control
     - Mistakes by pedestrian or driver has a higher chance of being fatal in these intersections
-
 - Areas where flawed design could occur:
   - Road width
   - Speed limit
