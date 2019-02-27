@@ -21,3 +21,4 @@ latex/
 
 .coverage
 bin/
+/.metadata/
