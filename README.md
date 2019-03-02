@@ -30,7 +30,7 @@ The final project for SFWRENG 2XB3.
 
 ## The Dataset
 - "Collisions" from Seattle GIS Open Data
-- Dataset of collisions at each intersection in Seattle (2004-Present)
+- Dataset of collisions at each intersection in Seattle (2004-2018)
 - Factors obtained from dataset
   - Number of Collisions
   - Weather, road, and daylight conditions – Type of collision (pedestrian/vehicle)
