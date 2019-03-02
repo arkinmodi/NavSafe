@@ -7,6 +7,11 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 
+\usepackage{array}
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+
 \newcommand{\latex}{\LaTeX\xspace}
 
 \oddsidemargin 0mm
@@ -43,11 +48,18 @@
     \newline
     \vspace{1cm}
     \newline
-    \begin{tabular}{| l | l | l | p{1cm} | l | l | p{3cm} |}
+    \begin{tabular}{| l | l | l | P{1cm} | l | P{3cm} | P{3cm} |}
         \hline
         \textbf{Timestamp} & \textbf{Originator} & \textbf{Type} 
         & \textbf{Task ID} & \textbf{Status} & \textbf{Comments} 
         & \textbf{Supporting Document(s)}\\
+        \hline
+        190228T1500 & All & Task & 1 & Complete & The project we have chosen is 
+        DriveSafe (name subject to be changed), which was first pitched by 
+        Leon. & Collisions.csv (data file)\\
+        \hline
+        190228T1520 & All & Task & 1 & ~ & Assigning team roles: Benson is the 
+        designated team leader, and Joy is the log admin. & Log.tex\\
         \hline
         ~ & ~ & ~ & ~ & ~ & ~ & ~\\
         \hline
