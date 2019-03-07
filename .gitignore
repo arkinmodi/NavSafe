@@ -12,7 +12,7 @@
 *.fdb_latexmk
 *.fls
 *.log
-
+*.snm
 *.pyc
 *.class
 
