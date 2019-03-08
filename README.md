@@ -1,4 +1,4 @@
-# DriveSafe - A Safer Way To Travel
+# NavSafe - A Safer Way Around
 
 The final project for SFWRENG 2XB3.
 
