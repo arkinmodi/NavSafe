@@ -1,8 +1,8 @@
 import java.lang.reflect.Array;
 /**
- * An ADT for Intersection Collision Data
+ * An ADT for Collision Data
  */
-public class Intersection {
+public class Collision{
 
 	private String fColDesc;	//Collision description
 	private String fColType; 	//Collision type
@@ -18,7 +18,7 @@ public class Intersection {
 	/**
 	 * Constructor for an intersection
 	 */
-	public Intersection(String[] splitRead) {
+	public Collision(String[] splitRead) {
 		this.fXCoord = Integer.parseInt(splitRead[0]);
 		this.fYCoord = Integer.parseInt(splitRead[1]);
 	}

@@ -7,7 +7,7 @@ import sort.Product;
 
 public class Read {
 
-	private Intersection[] intersections = new Intersection[205580];
+	private Collision[] collisions = new Collision[205580];
 			
 	public void read() throws IOException {
 		
@@ -17,7 +17,7 @@ public class Read {
 		int count = 0;
 		while ((read = inFile.readLine()) != null) {
 			String[] splitRead = read.split(",");
-			intersections[count] = new Intersection(splitRead);
+			collisions[count] = new Collision(splitRead);
 		}
 	}
 }
