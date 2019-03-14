@@ -5,6 +5,9 @@ import java.io.IOException;
 
 import sort.Product;
 
+/**
+ * Reads and extracts collision data from collisions.csv and stores each collision as an ADT
+ */
 public class Read {
 
 	private Collision[] collisions = new Collision[205580];
@@ -18,6 +21,7 @@ public class Read {
 		while ((read = inFile.readLine()) != null) {
 			String[] splitRead = read.split(",");
 			collisions[count] = new Collision(splitRead);
+			count += 1;
 		}
 	}
 }
