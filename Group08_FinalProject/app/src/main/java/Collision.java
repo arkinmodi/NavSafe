@@ -29,7 +29,20 @@ public class Collision{
 	public Collision(String[] splitRead) {
 		this.fXCoord = Integer.parseInt(splitRead[0]);
 		this.fYCoord = Integer.parseInt(splitRead[1]);
-		
+		this.fJuncType = splitRead[24];
+		this.fSevCode = splitRead[12];
+		this.fSevDesc = splitRead[13];
+		this.fColType = splitRead[14];
+		this.fColDesc = splitRead[26];
+		this.fWeather= splitRead[29];
+		this.fRoadCond= splitRead[30];
+		this.fLightCond= splitRead[31];
+		this.fPedCount = Integer.parseInt(splitRead[16]);
+		this.fInjuries = Integer.parseInt(splitRead[19]);
+		this.fSInjuries= Integer.parseInt(splitRead[20]);
+		this.fFatalities = Integer.parseInt(splitRead[21]);
+
+
 		//TODO Complete when read file is complete
 	}
 	
