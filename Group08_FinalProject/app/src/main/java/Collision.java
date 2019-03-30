@@ -1,6 +1,5 @@
 import java.lang.reflect.Array;
 
-import sort.Product;
 /**
  * An ADT for Collision Data
  */
@@ -30,6 +29,7 @@ public class Collision{
 	public Collision(String[] splitRead) {
 		this.fXCoord = Integer.parseInt(splitRead[0]);
 		this.fYCoord = Integer.parseInt(splitRead[1]);
+		
 		//TODO Complete when read file is complete
 	}
 	
@@ -160,47 +160,49 @@ public class Collision{
 	}
 	
 	/**
-	 * Compares two collisions based on severity, if severity equal, then sort by fatalities, if
-	 * fatalities equal, then sort by number of injuries
+	 * Compares two collisions based on number of fatalities, then severity, then number of injuries
 	 * 
 	 * @param j - a collision
 	 * @return value - number indicating whether less than or not
 	 */
 	public int compareTo(Collision j) {
-		// TODO
-//		int value = (fSales - j.sales());
-//		if (value == 0) {
-//			int i = 0;
-//			int k = 0;
-//			String id1 = fId;
-//			String id2 = j.id();
-//			int length1 = id1.length();
-//			int length2 = id2.length();
-//
-//			while (i < length1 && k < length2 && value == 0) {
-//				char c1 = id1.charAt(i);
-//				char c2 = id2.charAt(k);
-//				if (c1 < c2) {
-//					value = -1;
-//					return value;
-//				} else if (c1 > c2) {
-//					value = 1;
-//					return value;
-//				}
-//				i += 1;
-//				k += 1;
-//			}
-//			if (value == 0) {
-//				if (length1 < length2) {
-//					value = -1;
-//					return value;
-//				} else {
-//					value = 1;
-//					return value;
-//				}
-//			}
-//		}
-//		// Else return value
-//		return value;
+		int value = (fFatalities - j.getFatalities());
+		if (value == 0) {
+			int i = 0;
+			int k = 0;
+			String sevCode1 = fSevCode;
+			String sevCode2 = j.getSevCode();
+			int length1 = sevCode1.length();
+			int length2 = sevCode2.length();
+
+			while (i < length1 && k < length2 && value == 0) {
+				char c1 = sevCode1.charAt(i);
+				char c2 = sevCode2.charAt(k);
+				if (c1 < c2) {
+					value = -1;
+					return value;
+				} else if (c1 > c2) {
+					value = 1;
+					return value;
+				}
+				i += 1;
+				k += 1;
+			}
+
+			if (value == 0) {
+				if (length1 < length2) {
+					value = -1;
+					return value;
+				} else if (length1 > length2){
+					value = 1;
+					return value;
+				}
+				else {
+					return (fInjuries - j.fInjuries);
+				}
+			}
+		}
+		// Else return value
+		return value;
 	}
 }

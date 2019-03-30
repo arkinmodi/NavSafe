@@ -8,9 +8,9 @@ import java.io.IOException;
  */
 public class Read {
 
-	public Collision[] read() throws IOException {
+	public static Collision[] read() throws IOException {
 		
-		Collision[] collisions = new Collision[205580]; //Array of collisions ADT
+		Collision[] collisions = new Collision[205579]; //Array of collisions ADT
 		
 		BufferedReader inFile = new BufferedReader(new FileReader("collisions.csv"));
 
@@ -18,6 +18,7 @@ public class Read {
 		
 		int count = 0;
 		
+		read =  inFile.readLine();
 		while ((read = inFile.readLine()) != null) {
 			String[] splitRead = read.split(",");
 			collisions[count] = new Collision(splitRead);
