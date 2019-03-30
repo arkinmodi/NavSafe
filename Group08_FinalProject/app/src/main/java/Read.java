@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import sort.Product;
-
 /**
  * Reads and extracts collision data from collisions.csv and stores each collision as an ADT
  */
