@@ -190,7 +190,6 @@ public class Collision{
 //				i += 1;
 //				k += 1;
 //			}
-//
 //			if (value == 0) {
 //				if (length1 < length2) {
 //					value = -1;
