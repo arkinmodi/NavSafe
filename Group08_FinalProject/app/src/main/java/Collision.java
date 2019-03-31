@@ -22,7 +22,7 @@ public class Collision implements Comparable<Collision>{
 	
 	
 	/**
-	 * Constructor for an intersection
+	 * Constructor for an collision
 	 * 
 	 * @param splitRead - array of collision data from read module
 	 */
@@ -41,9 +41,6 @@ public class Collision implements Comparable<Collision>{
 		this.fInjuries = Integer.parseInt(splitRead[19]);
 		this.fSInjuries= Integer.parseInt(splitRead[20]);
 		this.fFatalities = Integer.parseInt(splitRead[21]);
-
-
-		//TODO Complete when read file is complete
 	}
 	
 	/**
