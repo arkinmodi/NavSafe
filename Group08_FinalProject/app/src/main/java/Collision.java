@@ -3,7 +3,7 @@ import java.lang.reflect.Array;
 /**
  * An ADT for Collision Data
  */
-public class Collision{
+public class Collision implements Comparable<Collision>{
 
 	private float fXCoord;		//X-coordinate of collision location
 	private float fYCoord;		//Y-coordinate of a collision location
@@ -27,8 +27,8 @@ public class Collision{
 	 * @param splitRead - array of collision data from read module
 	 */
 	public Collision(String[] splitRead) {
-		this.fXCoord = Integer.parseInt(splitRead[0]);
-		this.fYCoord = Integer.parseInt(splitRead[1]);
+		this.fXCoord = Float.parseFloat(splitRead[0]);
+		this.fYCoord = Float.parseFloat(splitRead[1]);
 		this.fJuncType = splitRead[24];
 		this.fSevCode = splitRead[12];
 		this.fSevDesc = splitRead[13];
@@ -173,46 +173,90 @@ public class Collision{
 	}
 	
 	/**
-	 * Compares two collisions based on number of fatalities, then severity, then number of injuries
+	 * Represent collision as a String
+	 * 
+	 * @return collisionStr - string representation
+	 */
+	public String toString(){
+		return ("X-coord: " + fXCoord + " Y-coord: " + fYCoord + 
+				" Collision Description: " + fColDesc + " Collision Type: " + 
+				fColType + " Junction Type: " + fJuncType + " Light Condition: " +
+				fLightCond + " Road Condition: " + fRoadCond +
+				" Severity Description: " + fSevDesc + " Weather: " + fWeather + " Pedestrian Count: " + fPedCount +
+				" Severe Injuries: " + fSInjuries + " Severity Code: " + fSevCode + " Fatalities: " + fFatalities + " Injuries: " + fInjuries); 
+	}
+	
+	/**
+	 * Compares two collisions based on number of severity code, then fatalities, then serious injuries, then number of injuries
 	 * 
 	 * @param j - a collision
 	 * @return value - number indicating whether less than or not
 	 */
 	public int compareTo(Collision j) {
-		int value = (fFatalities - j.getFatalities());
-		if (value == 0) {
-			int i = 0;
-			int k = 0;
-			String sevCode1 = fSevCode;
-			String sevCode2 = j.getSevCode();
-			int length1 = sevCode1.length();
-			int length2 = sevCode2.length();
+//		String sevCode1 = fSevCode;
+//		String sevCode2 = j.getSevCode();
+//
+//		System.out.print(sevCode1);
+//		if (sevCode1.charAt(0) < sevCode2.charAt(0)) { // 1 < 2, 1 < 3, 2 < 3
+//			return -1;
+//		} else if (sevCode1.charAt(0) > sevCode2.charAt(0)) { // 2 > 1, 3 > 2, 3 > 1
+//			return 1;
+//		} else if (sevCode1.length() < sevCode2.length()){ // 2 < 2b
+//			return -1;
+//		} else if (sevCode1.length() > sevCode2.length()){ // 2b > 2
+//			return 1;
+//		} else {
+//			//check rest
+//			return 0;
+//		}
 
-			while (i < length1 && k < length2 && value == 0) {
-				char c1 = sevCode1.charAt(i);
-				char c2 = sevCode2.charAt(k);
-				if (c1 < c2) {
-					value = -1;
-					return value;
-				} else if (c1 > c2) {
-					value = 1;
-					return value;
-				}
-				i += 1;
-				k += 1;
+		String sevCode1 = fSevCode;
+		String sevCode2 = j.getSevCode();
+		int length1 = sevCode1.length();
+		int length2 = sevCode2.length();
+		int value = 0;
+		int i = 0;
+		int k = 0;
+		while (i < length1 && k < length2) {
+			char c1 = sevCode1.charAt(i);
+			char c2 = sevCode2.charAt(k);
+			if (c1 < c2) {
+				value = -1;
+				return value;
+			} else if (c1 > c2) {
+				value = 1;
+				return value;
 			}
-
-			if (value == 0) {
-				if (length1 < length2) {
-					value = -1;
-					return value;
-				} else if (length1 > length2){
-					value = 1;
-					return value;
+			i += 1;
+			k += 1;
+		}
+		
+		if (value == 0) {
+			if (length1 < length2) {
+				value = -1;
+				return value;
+			} else if (length1 > length2){
+				value = 1;
+				return value;
+			}
+			else if (length1 == length2) {
+				if (fFatalities < j.getFatalities())
+					return -1;
+				else if (j.getFatalities() < fFatalities)
+					return 1;
+				else if (fFatalities == j.getFatalities()) {
+					if (fSInjuries < j.getSInjuries())
+						return -1;
+					else if (fSInjuries > j.getInjuries())
+						return 1;
+					if (fSInjuries == j.getInjuries()) {
+						if (fInjuries < j.getInjuries())
+							return -1;
+						else if (fInjuries >= j.getInjuries())
+							return 1;
+					}
 				}
-				else {
-					return (fInjuries - j.fInjuries);
-				}
+					
 			}
 		}
 		// Else return value
