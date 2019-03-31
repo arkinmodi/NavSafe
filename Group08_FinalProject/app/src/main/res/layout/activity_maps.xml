@@ -11,9 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
-        android:text="Search"
-        android:padding="10dp"
         android:layout_marginBottom="20dp"
-        android:paddingRight="10dp"/>
+        android:padding="10dp"
+        android:paddingRight="10dp"
+        android:text="Search"
+        android:onClick="searchFunction"/>
 
 </fragment>
