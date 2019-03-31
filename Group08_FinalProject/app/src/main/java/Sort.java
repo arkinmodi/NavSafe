@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Sort {
 	
-	public static Comparable auxiliary[]; // Auxiliary array for merging
+	public static Comparable<Collision> auxiliary[]; //Auxiliary array for merging
 
 	// Merges left and right halves for merge sort
 	private static void merge(Comparable[] x, int low, int mid, int high) {
@@ -34,7 +34,7 @@ public class Sort {
 	 * @param n - the size of the input array
 	 */
 
-	public static void sortMergeTD(Comparable[] x, int n) {
+	public static void sort(Comparable[] x, int n) {
 		auxiliary = new Comparable[n];
 		sortMergeTD(x, 0, n - 1);
 	}
@@ -53,7 +53,15 @@ public class Sort {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Collision[] collision = Read.read();
+		Collision[] collisions = Read.read();
 		
+		sort(collisions, collisions.length);
+		
+		System.out.println(collisions[collisions.length-6]);
+		System.out.println(collisions[collisions.length-5]);
+		System.out.println(collisions[collisions.length-4]);
+		System.out.println(collisions[collisions.length-3]);
+		System.out.println(collisions[collisions.length-2]);
+		System.out.println(collisions[collisions.length-1]);
 	}
 }

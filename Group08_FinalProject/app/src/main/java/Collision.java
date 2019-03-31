@@ -190,23 +190,7 @@ public class Collision implements Comparable<Collision>{
 	 * @return value - number indicating whether less than or not
 	 */
 	public int compareTo(Collision j) {
-//		String sevCode1 = fSevCode;
-//		String sevCode2 = j.getSevCode();
-//
-//		System.out.print(sevCode1);
-//		if (sevCode1.charAt(0) < sevCode2.charAt(0)) { // 1 < 2, 1 < 3, 2 < 3
-//			return -1;
-//		} else if (sevCode1.charAt(0) > sevCode2.charAt(0)) { // 2 > 1, 3 > 2, 3 > 1
-//			return 1;
-//		} else if (sevCode1.length() < sevCode2.length()){ // 2 < 2b
-//			return -1;
-//		} else if (sevCode1.length() > sevCode2.length()){ // 2b > 2
-//			return 1;
-//		} else {
-//			//check rest
-//			return 0;
-//		}
-
+		
 		String sevCode1 = fSevCode;
 		String sevCode2 = j.getSevCode();
 		int length1 = sevCode1.length();
@@ -237,23 +221,27 @@ public class Collision implements Comparable<Collision>{
 				return value;
 			}
 			else if (length1 == length2) {
-				if (fFatalities < j.getFatalities())
-					return -1;
-				else if (j.getFatalities() < fFatalities)
+				if (fFatalities < j.getFatalities()) {
+					return (-1);
+				}
+				else if (j.getFatalities() < fFatalities) {
 					return 1;
+				}
 				else if (fFatalities == j.getFatalities()) {
-					if (fSInjuries < j.getSInjuries())
-						return -1;
-					else if (fSInjuries > j.getInjuries())
+					if (fSInjuries < j.getSInjuries()) {
+						return (-1);
+					}
+					else if (fSInjuries > j.getInjuries()) {
 						return 1;
-					if (fSInjuries == j.getInjuries()) {
-						if (fInjuries < j.getInjuries())
+					}
+					else if (fSInjuries == j.getInjuries()) {
+						if (fInjuries < j.getInjuries()) {
 							return -1;
+						}
 						else if (fInjuries >= j.getInjuries())
 							return 1;
 					}
 				}
-					
 			}
 		}
 		// Else return value
