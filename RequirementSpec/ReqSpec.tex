@@ -23,21 +23,25 @@
 
 \newcounter{stepnum}
 
-\title{SFWRENG 2XB3 Final Project\\
-        \large Requirements Specification\\
-        \vspace{1ex}
-        \large Department of Computing and Software\\
-        \large McMaster University\\
-        \vspace{1ex}
-        \large Group 8\\
-        \large Project Name: NavSafe}
+\title{
+    SFWRENG 2XB3 Final Project \\
+    \large Requirements Specification\\
+    \vspace{1ex}
+    \large Department of Computing and Software\\
+    \large McMaster University\\
+    \vspace{1ex}
+    \large Group 8\\
+    \large Project Name: NavSafe
+}
 
-\author{Arkin Modi - 400142497\\
-        Benson Hall - 400129627\\
-        Joy Xiao - 400125285\\
-        Leon So - 400127468\\
-        Timothy Choy - 400135272}
-\date{Last updated: \today}
+\author{
+    Arkin Modi - 400142497\\
+    Benson Hall - 400129627\\
+    Joy Xiao - 400125285\\
+    Leon So - 400127468\\
+    Timothy Choy - 400135272
+}
+\date{Last updated: March 31, 2019}
 
 \begin{document}
 
@@ -65,26 +69,56 @@ NavSafe is a mobile application brings a new, innovative navigation system which
     The other stakeholders this application will impact are the general population of the area where this app is used.
 
 \section{Functional Requirements}
+\subsection{Read Module}
+The read module is designed to take in the data-set (csv file) and parse the data into a usable form. This is done by reading in the file, one line at a time, and using the data to create a collision object. The object is then stored in an array.
+
+\subsection{Collision ADT Module}
+The collisions ADT module is responsible for providing a data structure for which the rest the program will use to perform its various tasks. The data structure represents a collision.
+
+\subsection{Graphing Module}
+
+
+\subsection{Sort Module}
+
+
+\subsection{Search Module}
+
 
 \section{Non-Functional Requirements}
 \subsection{Reliability}
+The program should always return the safest path from the start location to the destination (within the city of Seattle, Washington). Safety of a path is determined by the collision data which is comprised of the collision history for Seattle, Washington.
 
 \subsection{Accuracy of Results}
+The program's results should be high in accuracy. The outputted result will be a path. This path must be following roads and should not take the user through places where a vehicle cannot go (both legally and physically). The path should also have the least amount of collisions possible.
 
 \subsection{Performance}
+The performance of the program must be relatively quick. Typically when the user will use this program, they will be ready to leave and will want to know the way immediately. For this reason the program should be fast and responsive.
 
 \subsection{Human-computer Interface Issues}
+The interface needs to be simple and easy to understand. As mentioned in the Performance section above, users will typically be using this program when they are ready to leave. This implies a sense of urgency and the user will need to be able to use the program in a quick manner. Having a simple user interface will enable faster operations and a smaller learning curve. Also, with the large target user based, people who drive in Seattle, a simple and easy to understand user interface will encourage more people to use the program.
 
 \subsection{Constraints}
     \subsubsection{Operating Constraints}
     
+    
     \subsubsection{Physical Constraints}
     
 \subsection{Portability Issues}
+
+
 \section{\texorpdfstring{Development and Maintenance Process \\Requirements}{Development and Maintenance Process Requirements}}
 
 \subsection{Quality Control Procedures}
+    \subsubsection{Unit Testing}
+    Individual units/components of the program will be tested for correctness and reliability. The purpose of this testing to validate that the software is operating as needed to be.
+    
+    \subsubsection{Continuous Integration Testing}
+    Individual modules will be tested for compatibility with existing modules. The purpose of this testing is to prevent incompatible modules from merging into the master branch and causing problems for all members.
+    
+    \subsubsection{System Testing}
+    The completely integrated system will be tested against the specification. The purpose of this test is to verify the program and specification are aligned.
 
 \subsection{System Maintenance Procedures}
+
 
 \end{document}
