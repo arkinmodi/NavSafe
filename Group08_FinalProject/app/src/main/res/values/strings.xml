@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">NavSafe</string>
     <string name="title_activity_maps">NavSafe</string>
-    <string name="search_function_label">Search</string>
+    <string name="search_function_label">NavSafe</string>
     <string name="search_function_text">Source Location</string>
+    <string name="button_text">Go</string>
 </resources>
