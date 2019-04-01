@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Sort {
+public class SortCollisions {
 	
 	public static Comparable<Collision> auxiliary[]; //Auxiliary array for merging
 
