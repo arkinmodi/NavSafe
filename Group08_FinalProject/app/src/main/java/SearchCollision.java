@@ -1,6 +1,19 @@
 import java.io.IOException;
 
+/**
+ * @brief Search module (linear search) for collisions contained in a street/edge between 2 intersections.
+ * @author Leon So
+ * 
+ */
 public class SearchCollision {
+	
+	/**
+	 * @brief Searches for all collisions contained in street/edge between 2 intersections.
+	 * @param x - Intersection on one end of the street (Intersection ADT)
+	 * @param y	- Intersection on the opposite end of the street (Intersection ADT)
+	 * @return weight - Returns summed weight of all collisions calculated based on severity code.
+	 * @throws IOException
+	 */
 	public static int search(Intersection x, Intersection y) throws IOException {
 		// Variable Declarations
 		int weight = 0; // Sum of severities of all collisions
@@ -23,6 +36,13 @@ public class SearchCollision {
 											&& collisions[i].getLocation().contains(int2NS)))))) {
 				
 				//Get sevcode and add assigned sevcode value to weight
+				/*	SevCode		Weight
+				 * 	0			1
+				 * 	1			2
+				 * 	2			3
+				 * 	2b			4
+				 * 	3			5
+				 */
 				if (collisions[i].getSevCode().equals("0")) {
 					weight += 1;
 				} else if (collisions[i].getSevCode().equals("1")){
