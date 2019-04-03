@@ -1,5 +1,3 @@
-%% READ: I am working on this offline, will update on Overleaf when Internet connection is established.
-
 \documentclass[t,12pt,numbers,fleqn]{beamer}
 \usepackage{pgfpages} 
 \usepackage{hyperref}
@@ -37,39 +35,75 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{NavSafe Objectives}
-NavSafe seeks to meet the following objectives:
+\frametitle{NavSafe Objective}
+NavSafe seeks to meet the following objective:
 \begin{itemize}
     \item Determine the safest route for a person to travel on based on data of collisions in the Seattle area.
-    \item 
 \end{itemize}
 \end{frame}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Scope}
+Features required to accomplish this project:
+\begin{itemize}
+    \item Fast sorting and searching algorithms
+    \item Custom edge-weighted graph (bidirectional)
+    \begin{itemize}
+        \item[] Vertices = Intersection
+        \item[] Edges = Path between pair of intersections
+        \item[] Weight of an edge/vertex based on cumulative severity indices 
+    \end{itemize}
+    \item Shortest path algorithm (i.e., Dijkstra) to find safest route
+\end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Motivation}
-
+\begin{itemize}
+    \item Vehicle collisions
+    \begin{itemize}
+        \item They happen.
+        \item Potential risk of \textbf{injury} or \textbf{death}
+    \end{itemize}
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Dataset(s) Used}
 \begin{itemize}
-    \item
+    \item Collisions dataset from the Seattle GIS Open Data site.
+    \item Intersections dataset from the City of Seattle's data site
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Requirements Specification of our Implementation}
-
+\frametitle{Requirements Specification}
+\begin{itemize}
+    \item Functional Requirements
+    \begin{itemize}
+        \item Read Module
+        \item Collision ADT Module
+        \item Intersection ADT Module
+        \item Graphing Module
+        \item Sort Module
+        \item Searching Module
+    \end{itemize}
+    \item[] % to create space
+    \item Non-Functional Requirements
+    \begin{itemize}
+        \item Reliability
+        \item Accuracy of Results
+        \item Performance
+        \item Human-computer Interface Issues
+        \item Constraints
+    \end{itemize}
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Design Specification of our Implementation}
+\frametitle{Design Specification}
     
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
