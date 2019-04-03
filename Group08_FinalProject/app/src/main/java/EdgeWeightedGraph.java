@@ -1,9 +1,9 @@
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 
 /**
  * Edge weighted graph for the intersections and edges (roads) in Seattle.
@@ -11,7 +11,7 @@ import java.io.FileWriter;
 public class EdgeWeightedGraph{
     private int numIntersections;
     private int numEdges;
-    private HashMap<Intersection, LinkedList<WeightedEdge>> adj;
+    private HashMap<Intersection, ArrayList<WeightedEdge>> adj;
 
     /**
      * Constructor for an edge weighted graph - intersections not connected
@@ -25,7 +25,7 @@ public class EdgeWeightedGraph{
         }
         this.numIntersections = numIntersections;
         this.numEdges = 0;
-        this.adj = new HashMap<Intersection, LinkedList<WeightedEdge>>();
+        this.adj = new HashMap<Intersection, ArrayList<WeightedEdge>>();
     }
 
     /**
@@ -59,7 +59,7 @@ public class EdgeWeightedGraph{
         //create edge
         WeightedEdge e = new WeightedEdge(x, y, weight);
         //get the linked list of edges of intersection x
-        LinkedList<WeightedEdge> edges = adj.get(x);
+        ArrayList<WeightedEdge> edges = adj.get(x);
         //add edge to list
         edges.add(e);
         //overwrite the linked list associated with intersection x
@@ -79,7 +79,7 @@ public class EdgeWeightedGraph{
      * @param x - intersection in question
      * @return linked list of weighted edges connected to x
      */
-    public LinkedList<WeightedEdge> adj(Intersection x){
+    public ArrayList<WeightedEdge> adj(Intersection x){
         return adj.get(x);
     }
 
@@ -92,5 +92,7 @@ public class EdgeWeightedGraph{
     public void writeGraph(String fileName) throws IOException{
         String filePath = new File("").getAbsolutePath();
         BufferedWriter writer = new BufferedWriter(new FileWriter(filePath + fileName));
+
+        writer.close();
     }
 }
