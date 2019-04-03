@@ -38,7 +38,7 @@ public class Collision implements Comparable<Collision>{
 	}
 	
 	/**
-	 * Gets x-coordinate for an intersection
+	 * Gets x-coordinate for a collision
 	 * 
 	 * @return fXCoord - The x-coordinate
 	 */
@@ -47,7 +47,7 @@ public class Collision implements Comparable<Collision>{
 	}
 	
 	/**
-	 * Gets y-coordinate for an intersection
+	 * Gets y-coordinate for a collision
 	 * 
 	 * @return fYCoord - The y-coordinate
 	 */
