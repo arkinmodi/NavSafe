@@ -10,12 +10,8 @@ public class Collision implements Comparable<Collision>{
 	private String fColDesc;	//Collision description
 	private String fColType; 	//Collision type
 	private String fJuncType; 	//Junction type
-	private String fLightCond;	//Light conditions
-	private String fRoadCond;	//Road conditions
 	private String fSevCode; 	//Severity code
 	private String fSevDesc;	//Severity description
-	private String fWeather;	//Weather conditions
-	private int fPedCount;		//pedestrian count
 	private int fInjuries; 		//number of injuries
 	private int fSInjuries;		//number of serious injuries
 	private int fFatalities;	//number of fatalities
@@ -35,11 +31,7 @@ public class Collision implements Comparable<Collision>{
 		this.fSevDesc = splitRead[13];
 		this.fColType = splitRead[14];
 		this.fColDesc = splitRead[26];
-		this.fWeather= splitRead[29];
 		this.fLocation = splitRead[9];
-		this.fRoadCond= splitRead[30];
-		this.fLightCond= splitRead[31];
-		this.fPedCount = Integer.parseInt(splitRead[16]);
 		this.fInjuries = Integer.parseInt(splitRead[19]);
 		this.fSInjuries= Integer.parseInt(splitRead[20]);
 		this.fFatalities = Integer.parseInt(splitRead[21]);
@@ -91,24 +83,6 @@ public class Collision implements Comparable<Collision>{
 	}
 
 	/**
-	 * Get light condition during collision
-	 * 
-	 * @return fLightCond - light condition during collision
-	 */
-	public String getLightCond(){
-		return fLightCond;
-	}
-
-	/**
-	 * Get road condition during collision
-	 * 
-	 * @return fRoadCond - road condition during collision
-	 */
-	public String getRoadCond(){
-		return fRoadCond;
-	}
-
-	/**
 	 * Get severity code
 	 * 
 	 * @return fSevCode - severity code
@@ -124,24 +98,6 @@ public class Collision implements Comparable<Collision>{
 	 */
 	public String getSevDesc(){
 		return fSevDesc;
-	}
-
-	/**
-	 * Get weather conditions of a collsion
-	 * 
-	 * @return fWeather - weather conditions during accident
-	 */
-	public String getWeather(){
-		return fWeather;
-	}
-
-	/**
-	 * Get pedestrian count involved a collsiion
-	 * 
-	 * @return fPedCount - number of pedestrians
-	 */
-	public int getPedCount(){
-		return fPedCount;
 	}
 
 	/**
@@ -189,8 +145,6 @@ public class Collision implements Comparable<Collision>{
 		return ("X-coord: " + fXCoord + " Y-coord: " + fYCoord + 
 				" Collision Description: " + fColDesc + " Collision Type: " + 
 				fColType + " Junction Type: " + fJuncType + " Light Condition: " +
-				fLightCond + " Road Condition: " + fRoadCond +
-				" Severity Description: " + fSevDesc + " Weather: " + fWeather + " Pedestrian Count: " + fPedCount +
 				" Severe Injuries: " + fSInjuries + " Severity Code: " + fSevCode + " Fatalities: " + fFatalities + " Injuries: " + fInjuries); 
 	}
 	
