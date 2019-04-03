@@ -25,25 +25,49 @@ public class EdgeWeightedGraph{
         this.adj = new HashMap<Intersection, LinkedList<WeightedEdge>>();
     }
 
+    /**
+     * Get number of intersections in the graph
+     * 
+     * @return numIntersections - number of intersections in graph
+     */
     public int getNumIntersections(){
         return numIntersections;
     }
 
+    /**
+     * Get number of edges in the graph
+     * 
+     * @return numEdges - number of edges in graph
+     */
     public int getNumEdges(){
         return numEdges;
     }
 
+    /**
+     * Create a weighted edge from two intersections to add to the graph
+     * 
+     * @param x - first intersection
+     * @param y - second intersection
+     * @throws IOException
+     */
     public void addEdge(Intersection x, Intersection y) throws IOException{
+        //determine the weight of the edge
         int weight = SearchCollision.search(x, y);
+        //create edge
         WeightedEdge e = new WeightedEdge(x, y, weight);
+        //get the linked list of edges of intersection x
         LinkedList<WeightedEdge> edges = adj.get(x);
+        //add edge to list
         edges.add(e);
+        //overwrite the linked list associated with intersection x
         adj.put(x, edges);
         
+        //perform same actions to intersection y
         edges = adj.get(y);
         edges.add(e);
         adj.put(y, edges);
         
+        //increment number of edges by 1
+        numEdges++;
     }
-
 }
