@@ -59,6 +59,10 @@ public class EdgeWeightedGraph{
         WeightedEdge e = new WeightedEdge(x, y, weight);
         //get the linked list of edges of intersection x
         ArrayList<WeightedEdge> edges = adj.get(x);
+        //if there is no associated array list with the intersection, make one
+        if(edges == null){
+            edges = new ArrayList<WeightedEdge>();
+        }
         //add edge to list
         edges.add(e);
         //overwrite the linked list associated with intersection x
@@ -66,6 +70,10 @@ public class EdgeWeightedGraph{
         
         //perform same actions to intersection y
         edges = adj.get(y);
+        // if there is no associated array list with the intersection, make one
+        if (edges == null) {
+            edges = new ArrayList<WeightedEdge>();
+        }
         edges.add(e);
         adj.put(y, edges);
         
@@ -102,18 +110,25 @@ public class EdgeWeightedGraph{
             for(WeightedEdge w: arr){
                 // x coordinate of first intersection
                 writer.write(Float.toString(w.getFirstIntersection().getXCoord()));
+                writer.write(", ");
                 // y coordinate of first intersection
                 writer.write(Float.toString(w.getFirstIntersection().getYCoord()));
+                writer.write(", ");
                 // description of first intersection
                 writer.write(w.getFirstIntersection().getUnitDesc());
+                writer.write(", ");
                 // x coordinate of second intersection
                 writer.write(Float.toString(w.getSecondIntersection().getXCoord()));
+                writer.write(", ");
                 // y coordinate of second intersection
                 writer.write(Float.toString(w.getSecondIntersection().getYCoord()));
+                writer.write(", ");
                 // description of second intersection
                 writer.write(w.getSecondIntersection().getUnitDesc());
+                writer.write(", ");
                 // weight of edge
                 writer.write(w.getWeight());
+                writer.newLine();
             }
         }
         writer.close();

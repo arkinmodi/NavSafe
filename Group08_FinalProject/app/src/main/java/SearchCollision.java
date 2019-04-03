@@ -15,6 +15,7 @@ public class SearchCollision {
 	 * @throws IOException
 	 */
 	public static int search(Intersection x, Intersection y) throws IOException {
+		ReadWrite.readWrite();
 		// Variable Declarations
 		int weight = 0; // Sum of severities of all collisions
 		String int1NS = x.getNS(); // North-south street of intersection x

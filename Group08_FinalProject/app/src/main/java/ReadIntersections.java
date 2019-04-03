@@ -13,7 +13,7 @@ public class ReadIntersections {
 		
 		Intersection[] intersections = new Intersection[15429]; //Array of intersections ADT
 		
-		String file_path = new File("").getAbsolutePath();
+		String file_path = new File("").getAbsoluteFile().getParentFile().getParentFile().getParentFile().getParent();
 		
 		BufferedReader inFile = new BufferedReader(new FileReader(file_path + "/data/SeattleIntersections.csv"));
 

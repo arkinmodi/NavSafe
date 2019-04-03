@@ -12,7 +12,7 @@ public class ReadStreets {
 		
 		Street[] streets = new Street[23798]; //Array of street ADTs
 		
-		String file_path = new File("").getAbsolutePath();
+		String file_path = new File("").getAbsoluteFile().getParentFile().getParentFile().getParentFile().getParent();
 		
 		BufferedReader inFile = new BufferedReader(new FileReader(file_path + "/data/Seattle_Streets.csv"));
 
