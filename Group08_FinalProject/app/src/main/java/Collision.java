@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 /**
  * An ADT for Collision Data
  */
