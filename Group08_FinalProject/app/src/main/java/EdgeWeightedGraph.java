@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.util.HashMap;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -90,9 +89,33 @@ public class EdgeWeightedGraph{
      * @throws IOException
      */
     public void writeGraph(String fileName) throws IOException{
-        String filePath = new File("").getAbsolutePath();
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath + fileName));
-        
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+        /**
+         * format of each line: 
+         * intersection 1 x/y coordinates,
+         * intersection 1 unit desc, 
+         * intersection 2 x/y
+         * intersection 2 unit desc,
+         * edge weight
+         */
+        for(ArrayList<WeightedEdge> arr: adj.values()){
+            for(WeightedEdge w: arr){
+                // x coordinate of first intersection
+                writer.write(Float.toString(w.getFirstIntersection().getXCoord()));
+                // y coordinate of first intersection
+                writer.write(Float.toString(w.getFirstIntersection().getYCoord()));
+                // description of first intersection
+                writer.write(w.getFirstIntersection().getUnitDesc());
+                // x coordinate of second intersection
+                writer.write(Float.toString(w.getSecondIntersection().getXCoord()));
+                // y coordinate of second intersection
+                writer.write(Float.toString(w.getSecondIntersection().getYCoord()));
+                // description of second intersection
+                writer.write(w.getSecondIntersection().getUnitDesc());
+                // weight of edge
+                writer.write(w.getWeight());
+            }
+        }
         writer.close();
     }
 }
