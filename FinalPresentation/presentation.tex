@@ -26,7 +26,7 @@
     Timothy Choy
 }
 \institute{Department of Software and Computing, McMaster University}
-\date{\today}
+\date{April 4, 2019}
 
 \begin{document}
  
@@ -64,8 +64,19 @@ Features required to accomplish this project:
 \begin{itemize}
     \item Vehicle collisions
     \begin{itemize}
-        \item They happen.
         \item Potential risk of \textbf{injury} or \textbf{death}
+    \end{itemize}
+    \item Many high-risk intersections with flawed designs
+    \begin{itemize}
+        \item Factor out of the traveler’s control
+        \item Mistakes by pedestrian or driver has a higher chance of being fatal in these intersections
+    \end{itemize}
+    \item Areas where flawed design could occur:
+    \begin{itemize}
+        \item Road width
+        \item Speed limit
+        \item Markings and signs
+        \item Intersection infrastructure such as dividers and shoulders
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -73,7 +84,14 @@ Features required to accomplish this project:
 \begin{frame}
 \frametitle{Dataset(s) Used}
 \begin{itemize}
-    \item Collisions dataset from the Seattle GIS Open Data site.
+    \item "Collisions" from Seattle GIS Open Data
+    \begin{itemize}
+        \item Number of Collisions
+        \item Weather, road, and daylight conditions
+        \item Type of collision (pedestrian/vehicle)
+        \item Collision details (left/right turn, etc.)
+        \item Severity of collision
+    \end{itemize}
     \item Intersections dataset from the City of Seattle's data site
 \end{itemize}
 \end{frame}
@@ -108,8 +126,25 @@ Features required to accomplish this project:
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Verification and Validation}
 
+% Verification and validation are independent procedures that are used together for checking that a product, service, or system meets requirements and specifications and that it fulfills its intended purpose. 
+
+\frametitle{Verification and Validation}
+Quality Control Procedures
+\begin{itemize}
+    \item Unit Testing
+    \begin{itemize}
+        \item Verify that individual units of code work as intended
+    \end{itemize}
+    \item Continuous Integration Testing
+    \begin{itemize}
+        \item Verify compatibility with existing modules
+    \end{itemize}
+    \item System Testing
+    \begin{itemize}
+        \item Verify the program and specification are aligned
+    \end{itemize}
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
