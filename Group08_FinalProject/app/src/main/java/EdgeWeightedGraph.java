@@ -77,7 +77,7 @@ public class EdgeWeightedGraph{
     /**
      * Get linked list of weighted edges that are connected to intersection x
      * @param x - intersection in question
-     * @return linked list of weighted edges connected to x
+     * @return array list of weighted edges connected to x
      */
     public ArrayList<WeightedEdge> adj(Intersection x){
         return adj.get(x);
@@ -92,7 +92,7 @@ public class EdgeWeightedGraph{
     public void writeGraph(String fileName) throws IOException{
         String filePath = new File("").getAbsolutePath();
         BufferedWriter writer = new BufferedWriter(new FileWriter(filePath + fileName));
-
+        
         writer.close();
     }
 }
