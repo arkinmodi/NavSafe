@@ -1,6 +1,9 @@
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 /**
  * Edge weighted graph for the intersections and edges (roads) in Seattle.
@@ -69,5 +72,25 @@ public class EdgeWeightedGraph{
         
         //increment number of edges by 1
         numEdges++;
+    }
+
+    /**
+     * Get linked list of weighted edges that are connected to intersection x
+     * @param x - intersection in question
+     * @return linked list of weighted edges connected to x
+     */
+    public LinkedList<WeightedEdge> adj(Intersection x){
+        return adj.get(x);
+    }
+
+    /**
+     * Write the graph to a given file name
+     * 
+     * @param fileName - file name to write to
+     * @throws IOException
+     */
+    public void writeGraph(String fileName) throws IOException{
+        String filePath = new File("").getAbsolutePath();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath + fileName));
     }
 }
