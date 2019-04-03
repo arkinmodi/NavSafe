@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,18 +11,20 @@ public class Read {
 
 	public static Collision[] read() throws IOException {
 		
-		Collision[] collisions = new Collision[205579]; //Array of collisions ADT
+		Collision[] collisions = new Collision[200206]; //Array of collisions ADT
 		
-		BufferedReader inFile = new BufferedReader(new FileReader("collisions.csv"));
+		String file_path = new File("").getAbsolutePath();
+		
+		BufferedReader inFile = new BufferedReader(new FileReader(file_path + "/data/collisionsExtract.csv"));
 
 		String read = null;
 		
 		int count = 0;
 		
-		read =  inFile.readLine();
-		while ((read = inFile.readLine()) != null) {
-			String[] splitRead = read.split(",");
+		while ((read = inFile.readLine()) != null && count != 200206) {
+			String[] splitRead = read.replace("Not Enough Information, or Insufficient Location Information","").split(",");
 			collisions[count] = new Collision(splitRead);
+//			System.out.println(count);
 			count += 1;
 		}
 		
