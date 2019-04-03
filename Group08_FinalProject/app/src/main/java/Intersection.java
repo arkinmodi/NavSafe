@@ -6,6 +6,8 @@ public class Intersection{
 	private float fXCoord;		//X-coordinate of collision location
 	private float fYCoord;		//Y-coordinate of a collision location
 	private String fUnitDesc;	//Intersection description
+	private String fStreetNS;	//Street in north-south direction
+	private String fStreetEW;	//Street in east-west direction
 	
 	
 	/**
@@ -17,6 +19,8 @@ public class Intersection{
 		this.fXCoord = Float.parseFloat(splitRead[0]);
 		this.fYCoord = Float.parseFloat(splitRead[1]);
 		this.fUnitDesc = splitRead[10];
+		this.fStreetNS = fUnitDesc.split(" AND ")[0];
+		this.fStreetEW = fUnitDesc.split(" AND ")[1];
 	}
 	
 	/**
@@ -44,5 +48,27 @@ public class Intersection{
 	 */
 	public String getUnitDesc(){
 		return fUnitDesc;
+	}
+	
+	/** 
+	 * Gets NS street
+	 * 
+	 * @return fStreetNS - street of intersection in north-south direction
+	 */
+	public String getNS(){
+		return fStreetNS;
+	}
+	
+	/** 
+	 * Gets EW street
+	 * 
+	 * @return fStreetEW - street of intersection in east-west direction
+	 */
+	public String getEW(){
+		return fStreetEW;
+	}
+	
+	public String toString(){
+		return ("StreetNS: " + fStreetNS +" StreetEW: " + fStreetEW); 
 	}
 }

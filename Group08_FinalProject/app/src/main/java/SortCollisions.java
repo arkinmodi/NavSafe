@@ -52,16 +52,17 @@ public class SortCollisions {
 		merge(x, low, mid, high);
 	}
 	
-	public static void main(String[] args) throws IOException {
-		Collision[] collisions = Read.read();
-		
-		sort(collisions, collisions.length);
-		
-		System.out.println(collisions[collisions.length-6]);
-		System.out.println(collisions[collisions.length-5]);
-		System.out.println(collisions[collisions.length-4]);
-		System.out.println(collisions[collisions.length-3]);
-		System.out.println(collisions[collisions.length-2]);
-		System.out.println(collisions[collisions.length-1]);
-	}
+	//Uncomment to test
+//	public static void main(String[] args) throws IOException {
+//		Collision[] collisions = Read.read();
+//		
+//		sort(collisions, collisions.length);
+//		
+//		System.out.println(collisions[collisions.length-6]);
+//		System.out.println(collisions[collisions.length-5]);
+//		System.out.println(collisions[collisions.length-4]);
+//		System.out.println(collisions[collisions.length-3]);
+//		System.out.println(collisions[collisions.length-2]);
+//		System.out.println(collisions[collisions.length-1]);
+//	}
 }

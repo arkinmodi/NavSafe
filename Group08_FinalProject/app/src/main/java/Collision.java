@@ -19,6 +19,7 @@ public class Collision implements Comparable<Collision>{
 	private int fInjuries; 		//number of injuries
 	private int fSInjuries;		//number of serious injuries
 	private int fFatalities;	//number of fatalities
+	private String fLocation; 	//Location of collision
 	
 	
 	/**
@@ -35,6 +36,7 @@ public class Collision implements Comparable<Collision>{
 		this.fColType = splitRead[14];
 		this.fColDesc = splitRead[26];
 		this.fWeather= splitRead[29];
+		this.fLocation = splitRead[9];
 		this.fRoadCond= splitRead[30];
 		this.fLightCond= splitRead[31];
 		this.fPedCount = Integer.parseInt(splitRead[16]);
@@ -167,6 +169,15 @@ public class Collision implements Comparable<Collision>{
 	 */
 	public int getFatalities(){
 		return fFatalities;
+	}
+	
+	/**
+	 * Get location from a collision
+	 * 
+	 * @return fLocation - location of collision
+	 */
+	public String getLocation(){
+		return fLocation;
 	}
 	
 	/**
