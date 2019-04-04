@@ -82,6 +82,39 @@ public class EdgeWeightedGraph{
     }
 
     /**
+     * Add edges given the two intersections and their weight
+     *
+     * @param x - first intersection
+     * @param y - second intersection
+     * @param weight - weight of edge
+     */
+    public void addEdge(Intersection x, Intersection y, int weight){
+        // create edge
+        WeightedEdge e = new WeightedEdge(x, y, weight);
+        // get the linked list of edges of intersection x
+        ArrayList<WeightedEdge> edges = adj.get(x);
+        // if there is no associated array list with the intersection, make one
+        if (edges == null) {
+            edges = new ArrayList<WeightedEdge>();
+        }
+        // add edge to list
+        edges.add(e);
+        // overwrite the linked list associated with intersection x
+        adj.put(x, edges);
+
+        // perform same actions to intersection y
+        edges = adj.get(y);
+        // if there is no associated array list with the intersection, make one
+        if (edges == null) {
+            edges = new ArrayList<WeightedEdge>();
+        }
+        edges.add(e);
+        adj.put(y, edges);
+
+        // increment number of edges by 1
+        numEdges++;
+    }
+    /**
      * Get linked list of weighted edges that are connected to intersection x
      * @param x - intersection in question
      * @return array list of weighted edges connected to x

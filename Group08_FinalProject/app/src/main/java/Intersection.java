@@ -23,6 +23,21 @@ public class Intersection{
 	}
 
 	/**
+	 * Constructor for an intersection given the x coordinate, y coordinate and unit description
+	 * 
+	 * @param fXCoord - x coordinate
+	 * @param fYCoord - y coordinate
+	 * @param unitDesc - unit description of intersection
+	 */
+	public Intersection(String fXCoord, String fYCoord, String unitDesc){
+		this.fXCoord = Float.parseFloat(fXCoord);
+		this.fYCoord = Float.parseFloat(fYCoord);
+		this.fUnitDesc = unitDesc;
+		this.fStreetNS = fUnitDesc.split(" AND ")[0];
+		this.fStreetEW = fUnitDesc.split(" AND ")[1];
+	}
+
+	/**
 	 * Gets x-coordinate for an intersection
 	 * 
 	 * @return fXCoord - The x-coordinate
