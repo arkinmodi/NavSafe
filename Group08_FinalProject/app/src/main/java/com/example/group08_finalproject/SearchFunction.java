@@ -11,6 +11,7 @@ public class SearchFunction extends AppCompatActivity {
     private EditText start;
     private EditText dest;
     private static final String LOG_TAG = SearchFunction.class.getSimpleName();
+    public static boolean press;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class SearchFunction extends AppCompatActivity {
 
         start = (EditText) findViewById(R.id.editText);
         dest = (EditText) findViewById(R.id.editText2);
+        press = false;
     }
 
     public void readInfo(View view) {
@@ -26,6 +28,7 @@ public class SearchFunction extends AppCompatActivity {
         String s = start.getText().toString();
         String d = dest.getText().toString();
 
+        press = true;
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
