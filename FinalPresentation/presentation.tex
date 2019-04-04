@@ -47,7 +47,7 @@ NavSafe seeks to meet the following objective:
 \frametitle{Scope}
 Features required to accomplish this project:
 \begin{itemize}
-    \item Fast sorting and searching algorithms
+    \item Searching algorithm
     \item Custom edge-weighted graph (bidirectional)
     \begin{itemize}
         \item[] Vertices = Intersection
@@ -93,6 +93,7 @@ Features required to accomplish this project:
         \item Severity of collision
     \end{itemize}
     \item Intersections dataset from the City of Seattle's data site
+    \item Streets dataset from the City of Seattle's data site
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,7 +106,7 @@ Features required to accomplish this project:
         \item Collision ADT Module
         \item Intersection ADT Module
         \item Graphing Module
-        \item Sort Module
+        %\item Sort Module   % dunno if we can include this
         \item Searching Module
     \end{itemize}
     \item[] % to create space
@@ -114,15 +115,42 @@ Features required to accomplish this project:
         \item Reliability
         \item Accuracy of Results
         \item Performance
+        
+        
+%Performance issues:
+%Went through many options for searching:
+%Linear search (would work, but slow)
+%Hashmaps (there would be two keys, which one to use?)
+%-Factor in duplicate keys, using the same collision weighing 2-3 times, would skew results
+%Symbol tables
+%-Same problem as hashmaps
+%2D array
+%- Would need number index for each street
+    %- Iterate through all collisions only once to do this
+%- 2D array of some other data structure
+    %- What data structure lol
+    %- Potential problem of duplicates again?
+%Key problems:
+%- Duplicates
+%- Indexing by both streets of an intersection
+%- Don't know direction of a road
+
+
         \item Human-computer Interface Issues
         \item Constraints
+        %perhaps bring up subjectiveness of our weighing?
     \end{itemize}
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Design Specification}
-    
+\begin{itemize}
+    \item Read Module: Read CSV files and create ADTs to be used
+    \item Graphing Module - Stage 1: Create custom edge-weighted graph
+    \item Search Module: Search for collisions that occurred on an edge and factor them into the weighing of the edge
+    \item Graphing Module - Stage 2: Using edge-weighted graph, find shortest path from starting intersection to destination intersection.
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Slide 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -136,13 +164,13 @@ Quality Control Procedures
     \begin{itemize}
         \item Verify that individual units of code work as intended
     \end{itemize}
-    \item Continuous Integration Testing
-    \begin{itemize}
-        \item Verify compatibility with existing modules
-    \end{itemize}
+    %\item Continuous Integration Testing
+    %\begin{itemize}
+    %    \item Verify compatibility with existing modules
+    %\end{itemize}
     \item System Testing
     \begin{itemize}
-        \item Verify the program and specification are aligned
+        \item Verify the program and specifications are aligned
     \end{itemize}
 \end{itemize}
 \end{frame}
