@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.util.ArrayList;
 /**
  * Dijkstra's Algorithm for shortest-paths.
  * Used on a collision edge-weighted graph to calculate the "shortest path".
@@ -17,14 +17,15 @@ public class DijkstraSP{
     // second intersection is the intersection connecting the first intersection to path
     private HashMap<Intersection, Intersection> edgeTo;
     private HashMap<Intersection, Integer> distTo; //key = intersection, value = total weight from start
-    private IndexMinPQ<Double> pq;
     EdgeWeightedGraph G;
-    Intersection start;
+    Intersection start, end;
 
-    public DijkstraSP(String fileName, Intersection start) throws FileNotFoundException, IOException{
+    public DijkstraSP(String fileName, Intersection start, Intersection end) throws FileNotFoundException, IOException{
         edgeTo = new HashMap<Intersection, Intersection>();
         distTo = new HashMap<Intersection, Integer>();
         G = new EdgeWeightedGraph(15429);
+        this.start = start;
+        this.end = end;
 
         String filePath = new File("").getAbsoluteFile().getParentFile().getParentFile().getParentFile().getParent();
         BufferedReader reader = new BufferedReader(new FileReader(filePath + fileName));
@@ -39,6 +40,17 @@ public class DijkstraSP{
             distTo.put(y, Integer.MAX_VALUE);
         }
         distTo.put(start, 0);
-        pq = new IndexMinPQ<Double>(G.getNumIntersections());
+        relax(G, start);
+    }
+
+    private void relax(EdgeWeightedGraph G, Intersection i){
+        ArrayList<WeightedEdge> list = G.adj(i);
+        for(WeightedEdge w: list){
+            if(distTo.get(w.getSecondIntersection()) > distTo.get(w.getFirstIntersection()) + w.getWeight()){
+                distTo.put(w.getSecondIntersection(), distTo.get(w.getFirstIntersection()) + w.getWeight());
+                edgeTo.put(w.getSecondIntersection(), w.getFirstIntersection());
+            }
+            relax(G, w.getSecondIntersection());
+        }
     }
 }
