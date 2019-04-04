@@ -50,6 +50,9 @@ public class DijkstraSP{
                 distTo.put(w.getSecondIntersection(), distTo.get(w.getFirstIntersection()) + w.getWeight());
                 edgeTo.put(w.getSecondIntersection(), w.getFirstIntersection());
             }
+            else{
+                return;
+            }
             relax(G, w.getSecondIntersection());
         }
     }
