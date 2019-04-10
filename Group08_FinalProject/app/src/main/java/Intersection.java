@@ -1,7 +1,7 @@
 /**
  * An ADT for Intersection Data for Seattle
  */
-public class Intersection{
+public class Intersection implements Comparable<Intersection>{
 	private float fXCoord;		//X-coordinate of intersection location
 	private float fYCoord;		//Y-coordinate of intersection location
 	private String fUnitDesc;	//Intersection description
@@ -18,21 +18,6 @@ public class Intersection{
 		this.fXCoord = Float.parseFloat(splitRead[0]);
 		this.fYCoord = Float.parseFloat(splitRead[1]);
 		this.fUnitDesc = splitRead[10];
-		this.fStreetNS = fUnitDesc.split(" AND ")[0];
-		this.fStreetEW = fUnitDesc.split(" AND ")[1];
-	}
-
-	/**
-	 * Constructor for an intersection given the x coordinate, y coordinate and unit description
-	 * 
-	 * @param fXCoord - x coordinate
-	 * @param fYCoord - y coordinate
-	 * @param unitDesc - unit description of intersection
-	 */
-	public Intersection(String fXCoord, String fYCoord, String unitDesc){
-		this.fXCoord = Float.parseFloat(fXCoord);
-		this.fYCoord = Float.parseFloat(fYCoord);
-		this.fUnitDesc = unitDesc;
 		this.fStreetNS = fUnitDesc.split(" AND ")[0];
 		this.fStreetEW = fUnitDesc.split(" AND ")[1];
 	}
@@ -84,5 +69,48 @@ public class Intersection{
 	
 	public String toString(){
 		return ("StreetNS: " + fStreetNS +" StreetEW: " + fStreetEW); 
+	}
+	
+	/**
+	 * Compares two intersections based on Unit Desc
+	 * 
+	 * @param j - an intersection
+	 * @return value - number indicating whether less than or not
+	 */
+	public int compareTo(Intersection j) {
+			int value = 0;
+			int i = 0;
+			int k = 0;
+			String  unitDesc1 = fUnitDesc;
+			String unitDesc2 = j.getUnitDesc();
+			int length1 = unitDesc1.length();
+			int length2 = unitDesc2.length();
+
+			while (i < length1 && k < length2) {
+				char c1 = unitDesc1.charAt(i);
+				char c2 = unitDesc2.charAt(k);
+				if (c1 < c2) {
+					value = -1;
+					return value;
+				} else if (c1 > c2) {
+					value = 1;
+					return value;
+				}
+				i += 1;
+				k += 1;
+			}
+
+			if (value == 0) {
+				if (length1 < length2) {
+					value = -1;
+					return value;
+				} else {
+					value = 1;
+					return value;
+				}
+			}
+		
+		// Else return value
+		return value;
 	}
 }
