@@ -24,9 +24,24 @@ public class TestSorts {
 		assert(collisions[collisions.length-2].toString().equals("X-coord: -122.26115 Y-coord: 47.520317 Collision Description: MOTOR VEHICLE RAN OFF ROAD - HIT FIXED OBJECT Collision Type: Other Junction Type: Mid-Block (not related to intersection) Light Condition:  Severe Injuries: 0 Severity Code: 3 Fatalities: 4 Injuries: 0"));
 		assert(collisions[collisions.length-1].toString().equals("X-coord: -122.3473 Y-coord: 47.64717 Collision Description: MOTOR VEHICLE STRUCK OBJECT IN ROAD Collision Type: Head On Junction Type: Mid-Block (not related to intersection) Light Condition:  Severe Injuries: 41 Severity Code: 3 Fatalities: 5 Injuries: 78"));
 	
-		//sorting an empty arary
+		//sorting an empty array
 		Collision[] empty = {};
 		SortCollisions.sort(empty, empty.length);
+		assert(empty.length == 0);
+	}
+	
+	@Test
+	public void testSortIntersections() throws IOException {
+		Intersection[] intersections = ReadIntersections.read();
+		
+		SortIntersectionDropDown.sort(intersections, intersections.length);
+
+		assert(intersections[intersections.length-6].toString().equals("StreetNS: YALE AVE N StreetEW: DEAD END 2"));
+		assert(intersections[intersections.length-1].toString().equals("StreetNS: YUKON AVE S StreetEW: S HENDERSON ST"));
+		
+		//sorting an empty array
+		Intersection[] empty = {};
+		SortIntersectionDropDown.sort(empty, empty.length);
 		assert(empty.length == 0);
 	}
 }
