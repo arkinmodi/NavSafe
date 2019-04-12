@@ -42,7 +42,7 @@
     Leon So - 400127468\\
     Timothy Choy - 400135272
 }
-\date{Last updated: April 1, 2019}
+\date{Last updated: April 12, 2019}
 
 \begin{document}
 
@@ -74,19 +74,22 @@ NavSafe is a mobile application brings a new, innovative navigation system which
 The read module is designed to take in the data-set (csv file) and parse the data into a usable form. This is done by reading in the file, one line at a time, and using the data to create a collision object. The object is then stored in an array.
 
 \subsection{Collision ADT Module}
-The collisions ADT module is responsible for providing a data structure for which the rest the program will use to perform its various tasks. The data structure represents a collision.
+The collisions ADT module is responsible for providing a data structure for which the rest the program will use to perform its various tasks. The data structure represents a collision. The data structure contains a field for all data provided in the csv file.
 
 \subsection{Intersection ADT Module}
+The intersection ADT module is responsible for providing a data structure for which the rest of the program will use to perform its various tasks. The data structure represents an intersection between two roads. The data structure contains a field for all data provided in the csv file.
 
+\subsection{Street ADT Module}
+The street ADT module is responsible for providing a data structure for which the rest of the program will use to perform its various tasks. The data structure represents a road between two intersections. The data structure contains a field for all data provided in the csv file.
 
 \subsection{Graphing Module}
-
+The graphing module will be responsible for creating a weighted edge graph out of the intersections. The nodes are the intersections while the edges are the streets. The weights will be determined by the distance between two connecting intersections and the number of collisions. The shortest safest path will be implemented using Dijkstra's algorithm.
 
 \subsection{Sort Module}
-
+The sort module will be responsible for sorting the collision or the intersections. Collisions will be sorted based on the severity of the collision. Intersections will be sorted in alphabetical order. The sorting module will be implemented with merge sort (top-down).
 
 \subsection{Search Module}
-
+The search module will be responsible for searching for a given intersection or collision. This will be done with linear search as the result will be based on multiple factors.
 
 \section{Non-Functional Requirements}
 \subsection{Reliability}
@@ -103,7 +106,7 @@ The interface needs to be simple and easy to understand. As mentioned in the Per
 
 \subsection{Constraints}
     \subsubsection{Operating Constraints}
-    The program will be made with the Java SE Development Kit 11 in Android Studio and exported as an apk to be installed and run on an Android device. The program will need to run on Android 4.0 or newer (recommended os support from Google).
+    The program will be made with the Java SE Development Kit 11 in Android Studio and exported as an apk to be installed and run on an Android device. The program will need to run on Android 4.0 or newer (recommended OS support from Google).
     
     \subsubsection{Physical Constraints}
     The program will need to be able to run on an Android smartphone.
@@ -121,6 +124,6 @@ The interface needs to be simple and easy to understand. As mentioned in the Per
     The completely integrated system will be tested against the specification. The purpose of this test is to verify the program and specification are aligned.
 
 \subsection{System Maintenance Procedures}
-
+A likely changes to the system maintenance procedures is to focus on providing one path as appose to multiple paths. The change would improve run-time and development time.
 
 \end{document}
