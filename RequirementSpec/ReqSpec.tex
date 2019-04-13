@@ -104,6 +104,10 @@ The performance of the program must be relatively quick. Typically when the user
 \subsection{Human-computer Interface Issues}
 The interface needs to be simple and easy to understand. As mentioned in the Performance section above, users will typically be using this program when they are ready to leave. This implies a sense of urgency and the user will need to be able to use the program in a quick manner. Having a simple user interface will enable faster operations and a smaller learning curve. Also, with the large target user based, people who drive in Seattle, a simple and easy to understand user interface will encourage more people to use the program.
 
+\newpage
+\subsection{Scalability}
+The data set for this program has the potential to grow as new roads are added and more collision happen. The current implementation uses data from 2004 to 2018. As the data set grows with more data becoming available, older years should no longer be considered. Since technology is always improving and change the automobile industry and new safety technology is being added to the streets, hot spots for collision will move. Therefore the application should only consider a select specific time period to focus on when calculating the route. This will allow scalability even as the data sets continue to grow.
+
 \subsection{Constraints}
     \subsubsection{Operating Constraints}
     The program will be made with the Java SE Development Kit 11 in Android Studio and exported as an apk to be installed and run on an Android device. The program will need to run on Android 4.0 or newer (recommended OS support from Google).
