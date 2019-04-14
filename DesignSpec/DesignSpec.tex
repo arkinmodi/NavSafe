@@ -88,13 +88,14 @@
     \hline
     Arkin Modi & Head of Back-End & Requirements Specification, Design Specification & ~\\
     \hline
-    Benson Hall & Team Leader, Scrum Leader, Back-End Programmer & ~ & ~\\
+    Benson Hall & Team Leader, Scrum Leader, Back-End Programmer & Graph construction and associated "shortest-path" algorithm, project log. %Design Specification - this is mildly subjective as of now
+    & ~\\
     \hline
-    Leon So & Back-End Programmer & ~ & ~\\
+    Leon So & Back-End Programmer & All read modules, Collision ADT, Intersection ADT, Street ADT, both searching algorithm (SearchIntersections.java, SearchCollisions.java), Top-down MergeSort for sorting intersections alphabetically, Top-down MergeSort for sorting collisions by severity codes, fatalities, and injuries. & ~\\
     \hline
-    Timothy Choy & Head of Front-End and Programmer & ~ & ~\\
+    Timothy Choy & Head of Front-End and Programmer & Project Log, Everything to do with front end (designing the interface, Google Maps API integration, connecting front end to back end), Decomposition Tree & ~\\
     \hline
-    Joy Xiao & Log Admin and Back-End Programmer & Project Log & ~\\
+    Joy Xiao & Log Admin and Back-End Programmer & Project Log, Top-Down MergeSort for sorting the collisions according to their severity, fatalities, number of severe injuries, then number of injuries, created the unit testing for all the read modules, searching modules, and sorting modules. &~\\
     \hline
 \end{tabular}
 \newpage
@@ -122,7 +123,9 @@ The purpose of NavSafe is to provide a path from a start point to an end point i
     
     \subsection{UML Class Diagram}
     %You should include a UML class diagram showing a static representation of your application classes and relationship between classes.
-    \includegraphics[angle=0, scale=0.3]{UML_Class_Diagram.png}
+    \begin{center}
+        \includegraphics[angle=270, scale=0.4]{UML_Class_Diagram.png}
+    \end{center}
 
 \newpage
 \section{Module Interface Specification}
@@ -198,8 +201,12 @@ The intersectionData file will not change format.
 
 read():
 \begin{itemize}
-    \item output: A sequence of intersections where each intersection is parsed from each line in the intersectionData file
+    \item output: A sequence of intersections where each intersection is parsed from each line in the IntersectionData file
 \end{itemize}
+
+%insert UMLSM-ReadIntersections.png here
+\subsubsection*{UML State Machine}
+\includegraphics[scale=0.625]{UMLSM-ReadIntersections.png}
 
 \newpage
 \subsection{Read Streets Module}
@@ -645,6 +652,10 @@ None
 \begin{itemize}
     \item output: searches for all collisions contained in street/edge between 2 intersections, x and y, and returns summed weight of all collisions calculated based on severity code
 \end{itemize}
+
+%insert UMLSM-SearchCollisions.png here.
+\subsubsection*{UML State Machine}
+\includegraphics[scale=0.725]{UMLSM-SearchCollision.png}
 
 \newpage
 \subsection{Sort Intersection Module}
