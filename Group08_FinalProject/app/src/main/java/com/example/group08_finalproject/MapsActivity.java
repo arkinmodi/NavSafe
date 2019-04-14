@@ -79,8 +79,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             downloadTask.execute(url);
 
-            mMap.addMarker(new MarkerOptions().position(source).title("Starting location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(dest).title("Destination"));
+            mMap.addMarker(new MarkerOptions().position(source).title(SearchFunction.s).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(dest).title(SearchFunction.d));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(source, 13));
         }
     }

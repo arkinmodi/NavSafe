@@ -12,6 +12,8 @@ public class SearchFunction extends AppCompatActivity {
     private EditText dest;
     private static final String LOG_TAG = SearchFunction.class.getSimpleName();
     public static boolean press;
+    public static String s;
+    public static String d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,8 @@ public class SearchFunction extends AppCompatActivity {
 
     public void readInfo(View view) {
         Log.d(LOG_TAG, "Button clicked!");
-        String s = start.getText().toString();
-        String d = dest.getText().toString();
+        s = start.getText().toString();
+        d = dest.getText().toString();
 
         press = true;
         Intent intent = new Intent(this, MapsActivity.class);
