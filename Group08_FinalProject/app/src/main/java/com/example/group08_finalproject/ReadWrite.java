@@ -15,7 +15,7 @@ public class ReadWrite {
 
 	public static void readWrite() throws IOException {
 
-		String file_path = new File("").getAbsoluteFile().getParentFile().getParentFile().getParentFile().getParent();
+		String file_path = new File("").getAbsoluteFile().getParentFile().getParentFile().getParentFile().getParentFile().getParentFile().getParentFile().getParentFile().getParent();
 
 		BufferedReader inFile = new BufferedReader(new FileReader(file_path + "/data/collisions.csv"));
 		BufferedWriter writer = new BufferedWriter(new FileWriter(file_path + "/data/collisionsExtract.csv"));
