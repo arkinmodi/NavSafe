@@ -15,19 +15,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/spinner_source"
+        <EditText
+            android:id="@+id/editTextSrc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Source"
+            tools:text="Source" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/spinner_dest"
+        <EditText
+            android:id="@+id/editTextDest"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Destination"
+            tools:text="Destination" />
 
         <Button
             android:id="@+id/button"
