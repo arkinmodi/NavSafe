@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 public class SortIntersectionDropDown {
 	
 	public static Comparable<Intersection> auxiliary[]; //Auxiliary array for merging

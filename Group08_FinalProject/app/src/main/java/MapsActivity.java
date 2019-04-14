@@ -1,5 +1,3 @@
-package com.example.group08_finalproject;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -8,11 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.group08_finalproject.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -24,7 +22,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
