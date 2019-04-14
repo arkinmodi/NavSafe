@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 public class SortIntersectionDropDown {
 	
 	public static Comparable<Intersection> auxiliary[]; //Auxiliary array for merging
@@ -52,7 +54,7 @@ public class SortIntersectionDropDown {
 	
 	//Uncomment to test
 //	public static void main(String[] args) throws IOException {
-//		Intersection[] intersections = ReadIntersections.read();
+//		com.example.group08_finalproject.Intersection[] intersections = com.example.group08_finalproject.ReadIntersections.read();
 //		
 //		sort(intersections, intersections.length);
 //		

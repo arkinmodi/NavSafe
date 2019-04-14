@@ -1,6 +1,7 @@
+package com.example.group08_finalproject;
 
 public class Street {
-	private String fName;		//Street Name
+	private String fName;		//com.example.group08_finalproject.Street Name
 	private String fStreetEnd1;	//One end of the street
 	private String fStreetEnd2;	//One end of the street
 	

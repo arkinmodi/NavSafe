@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 import java.io.IOException;
 
 public class SearchIntersections {

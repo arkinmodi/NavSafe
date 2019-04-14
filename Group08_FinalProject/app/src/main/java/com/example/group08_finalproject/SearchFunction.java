@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,11 +8,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.example.group08_finalproject.R;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class SearchFunction extends AppCompatActivity {
     private static final String LOG_TAG = SearchFunction.class.getSimpleName();

@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 public class SortCollisions {
 	
 	public static Comparable<Collision> auxiliary[]; //Auxiliary array for merging
@@ -52,7 +54,7 @@ public class SortCollisions {
 	
 	//Uncomment to test
 //	public static void main(String[] args) throws IOException {
-//		Collision[] collisions = Read.read();
+//		com.example.group08_finalproject.Collision[] collisions = com.example.group08_finalproject.Read.read();
 //		
 //		sort(collisions, collisions.length);
 //		

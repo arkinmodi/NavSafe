@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -6,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.group08_finalproject.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

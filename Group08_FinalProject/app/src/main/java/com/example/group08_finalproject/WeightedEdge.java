@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 /**
  * Weighted edge ADT. An edge is defined as a path between two adjacent intersections.
  * The weight is determined by the accumulation of severity indices from collisions that occurred

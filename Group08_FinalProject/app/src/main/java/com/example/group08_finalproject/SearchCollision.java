@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 import java.io.IOException;
 
 /**
@@ -9,8 +11,8 @@ public class SearchCollision {
 	
 	/**
 	 * @brief Searches for all collisions contained in street/edge between 2 intersections.
-	 * @param x - Intersection on one end of the street (Intersection ADT)
-	 * @param y	- Intersection on the opposite end of the street (Intersection ADT)
+	 * @param x - com.example.group08_finalproject.Intersection on one end of the street (com.example.group08_finalproject.Intersection ADT)
+	 * @param y	- com.example.group08_finalproject.Intersection on the opposite end of the street (com.example.group08_finalproject.Intersection ADT)
 	 * @return weight - Returns summed weight of all collisions calculated based on severity code.
 	 * @throws IOException
 	 */
@@ -62,7 +64,7 @@ public class SearchCollision {
 	
 	//Uncomment to test
 //	public static void main(String[] args) throws IOException {
-//		Intersection[] intersections = ReadIntersections.read();
+//		com.example.group08_finalproject.Intersection[] intersections = com.example.group08_finalproject.ReadIntersections.read();
 //		System.out.println(intersections[1028]);
 //		System.out.println(intersections[3654]);
 //		System.out.println(intersections[1028].getNS());

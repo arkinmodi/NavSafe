@@ -1,6 +1,6 @@
-/******************************************************************************
- *  Compilation:  javac IndexMinPQ.java
- *  Execution:    java IndexMinPQ
+package com.example.group08_finalproject; /******************************************************************************
+ *  Compilation:  javac com.example.group08_finalproject.IndexMinPQ.java
+ *  Execution:    java com.example.group08_finalproject.IndexMinPQ
  *  Dependencies: StdOut.java
  *
  *  Minimum-oriented indexed PQ implementation using a binary heap.
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The {@code IndexMinPQ} class represents an indexed priority queue of generic keys.
+ *  The {@code com.example.group08_finalproject.IndexMinPQ} class represents an indexed priority queue of generic keys.
  *  It supports the usual <em>insert</em> and <em>delete-the-minimum</em>
  *  operations, along with <em>delete</em> and <em>change-the-key</em> 
  *  methods. In order to let the client refer to keys on the priority queue,
@@ -324,7 +324,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
 
 
     /**
-     * Unit tests the {@code IndexMinPQ} data type.
+     * Unit tests the {@code com.example.group08_finalproject.IndexMinPQ} data type.
      *
      * @param args the command-line arguments
      */

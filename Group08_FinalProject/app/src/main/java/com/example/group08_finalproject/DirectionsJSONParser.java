@@ -1,3 +1,5 @@
+package com.example.group08_finalproject;
+
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;

@@ -1,12 +1,14 @@
+package com.example.group08_finalproject;
+
 /**
- * An ADT for Intersection Data for Seattle
+ * An ADT for com.example.group08_finalproject.Intersection Data for Seattle
  */
 public class Intersection implements Comparable<Intersection>{
 	private float fXCoord;		//X-coordinate of intersection location
 	private float fYCoord;		//Y-coordinate of intersection location
-	private String fUnitDesc;	//Intersection description
-	private String fStreetNS;	//Street in north-south direction
-	private String fStreetEW;	//Street in east-west direction
+	private String fUnitDesc;	//com.example.group08_finalproject.Intersection description
+	private String fStreetNS;	//com.example.group08_finalproject.Street in north-south direction
+	private String fStreetEW;	//com.example.group08_finalproject.Street in east-west direction
 	
 	
 	/**
@@ -23,7 +25,7 @@ public class Intersection implements Comparable<Intersection>{
 	}
 
 	/**
-	 * Second constructor for an intersection - necessary for DijkstraSP.java
+	 * Second constructor for an intersection - necessary for com.example.group08_finalproject.DijkstraSP.java
 	 * 
 	 * @param xCoord - x coordinate
 	 * @param yCoord - y coordinate

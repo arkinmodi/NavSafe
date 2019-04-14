@@ -1,12 +1,14 @@
+package com.example.group08_finalproject;
+
 /**
- * An ADT for Collision Data
+ * An ADT for com.example.group08_finalproject.Collision Data
  */
 public class Collision implements Comparable<Collision>{
 
 	private float fXCoord;		//X-coordinate of collision location
 	private float fYCoord;		//Y-coordinate of a collision location
-	private String fColDesc;	//Collision description
-	private String fColType; 	//Collision type
+	private String fColDesc;	//com.example.group08_finalproject.Collision description
+	private String fColType; 	//com.example.group08_finalproject.Collision type
 	private String fJuncType; 	//Junction type
 	private String fSevCode; 	//Severity code
 	private String fSevDesc;	//Severity description
@@ -141,7 +143,7 @@ public class Collision implements Comparable<Collision>{
 	 */
 	public String toString(){
 		return ("X-coord: " + fXCoord + " Y-coord: " + fYCoord + 
-				" Collision Description: " + fColDesc + " Collision Type: " + 
+				" com.example.group08_finalproject.Collision Description: " + fColDesc + " com.example.group08_finalproject.Collision Type: " +
 				fColType + " Junction Type: " + fJuncType + " Light Condition: " +
 				" Severe Injuries: " + fSInjuries + " Severity Code: " + fSevCode + " Fatalities: " + fFatalities + " Injuries: " + fInjuries); 
 	}
