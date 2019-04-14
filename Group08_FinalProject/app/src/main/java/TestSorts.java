@@ -1,8 +1,6 @@
-import static org.junit.Assert.*;
-
-import java.io.IOException;
-
+import com.google.common.truth.Truth.assertThat;
 import org.junit.Test;
+import java.io.IOException;
 
 public class TestSorts {
 
