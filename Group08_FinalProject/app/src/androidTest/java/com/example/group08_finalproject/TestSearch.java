@@ -7,6 +7,8 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -15,9 +17,6 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-pimport com.google.common.truth.Truth.assertThat;
-        import org.junit.Test;
-        import java.io.IOException;
 
 public class TestSearch {
 
