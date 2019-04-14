@@ -23,6 +23,21 @@ public class Intersection implements Comparable<Intersection>{
 	}
 
 	/**
+	 * Second constructor for an intersection - necessary for DijkstraSP.java
+	 * 
+	 * @param xCoord - x coordinate
+	 * @param yCoord - y coordinate
+	 * @param unitDesc - description of intersection
+	 */
+	public Intersection(String xCoord, String yCoord, String unitDesc){
+		this.fXCoord = Float.parseFloat(xCoord);
+		this.fYCoord = Float.parseFlot(yCoord);
+		this.fUnitDesc = unitDesc;
+		this.fStreetNS = fUnitDesc.split(" AND ")[0];
+		this.fStreetEW = fUnitDesc.split(" AND ")[1];
+	}
+
+	/**
 	 * Gets x-coordinate for an intersection
 	 * 
 	 * @return fXCoord - The x-coordinate
